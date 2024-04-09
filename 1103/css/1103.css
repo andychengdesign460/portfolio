@@ -1,0 +1,313 @@
+@charset "utf-8";
+/* CSS Document */
+
+body{
+	font-family:Verdana, Geneva, sans-serif;
+	margin:0;
+	padding:0;
+	background: rgba(229,229,229,1);
+	color:rgba(38, 70, 83, 1);
+	line-height:1.5em;
+}
+
+::-moz-selection{ /* Firefox */
+    color:rgba(255, 255, 255, 1);
+    background: rgba(38, 70, 83, 1);
+}
+
+::selection{
+    color:rgba(255, 255, 255, 1);
+    background: rgba(38, 70, 83, 1);
+}
+
+a.on_a{
+	color: rgba(221,120,47,1);
+}
+
+/*header*/
+header{
+	width:100%;
+	box-sizing:border-box;
+	text-align:center;
+	padding:20px;
+}
+
+header .h_img{
+	display: block;
+	width:100px;
+	height:100px;
+	margin:auto;
+	background:url(../images/LOGO.png) no-repeat;
+    background-size: contain;}
+
+main{
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+}
+
+
+nav{
+	flex:1;
+
+	
+}
+
+
+/*nav*/
+nav a{
+	display: block;
+	width:80%;
+	margin:auto;
+	
+	text-align:center;
+	text-decoration:none;
+	
+	border-bottom:solid 1px rgba(38, 70, 83, 1);
+	padding:20px;
+	box-sizing:border-box;
+
+    font-size:max(2vw,18px);
+    /*width:max(2vw,18px)寬度最小是18px否則使用2vw*/
+
+	
+	color:rgba(38, 70, 83, 1);
+}
+
+nav a:hover{
+	color:rgba(221,120,47,1);
+}
+
+
+nav a:nth-child(1){
+   border-top:solid 1px rgba(38, 70, 83, 1);
+}
+
+/* aside */
+
+aside{
+ flex:1;
+ text-align: center; 
+}
+
+/*nomarginauot*/
+
+aside p{
+	padding:20px ;
+	font-size:max(1vw,16px);
+	color:rgba(38, 70, 83, 1);
+
+}
+
+
+
+
+/* section */
+section{
+	flex:1;
+	display:flex;
+	flex-wrap: wrap;
+}
+
+
+
+.box{
+	display: flex;
+    	flex-direction: column;
+	width:80%;
+	margin:10px auto;
+	
+	background:rgba(255,255,255,1);
+	z-index:10;
+	box-shadow: 2px 2px 8px rgba(173, 181, 189 ,1);
+	border-radius: 10px;
+	overflow:hidden;
+}
+
+.box:hover{
+	cursor: pointer;
+}
+
+.imgbox{
+	order: 3;
+	width:100%;
+	overflow:hidden;
+}
+
+.box .imgbox img{
+
+
+	float:left;
+	width:100%;
+}
+
+.box h3{
+	order:1;
+	box-sizing:border-box;
+	padding:0px 20px;
+	color:rgba(221,120,47,1);
+}
+
+.box p{
+	order: 2;
+	box-sizing:border-box;
+	padding:0px 20px;
+	color:rgba(42, 157, 143 ,1);
+}
+
+.head{
+	order: 4;
+	display:inline-block;
+	padding:20px;
+}
+
+.head img{
+	float:left;
+	width:40px;
+	height:40px;
+	border-radius: 50%;
+}
+
+.head span{
+	float:left;
+	font-size:13px;
+	color:rgba(42, 157, 143 ,1);
+	line-height:40px;
+	margin-left:10px;
+}
+
+/* For tablets */
+@media only screen and (min-width: 768px) {
+    
+    nav{
+    	text-align: center;
+    }
+
+    nav a{
+    	display: inline;
+    	border-top: solid 1px rgba(38, 70, 83, 1);
+    	padding: 10px 30px;
+    	margin: 10px 0px 0px;
+
+
+    }
+
+
+
+    aside p{
+    	padding: 0px 60px;
+    }
+
+
+    section{
+    	flex-direction: row;
+        justify-content: ;
+        align-items: ;
+    }
+
+    .box{
+    	width: 45%;
+    }
+
+    .imgbox{height: 100%;
+
+
+    }
+
+    
+
+    
+
+
+
+    
+     
+
+    
+
+}
+
+@media only screen and (min-width: 1200px) {
+
+
+
+	main{
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	flex-wrap: wrap;
+    }
+
+
+
+    nav{ 
+	flex:1 ;
+	order:1;
+	display: flex;
+	flex-direction: column;
+    }
+
+
+
+    nav a{
+    	display: block;
+    	border-top: none;
+    	width:100%;
+    	padding: 20px;
+    	
+
+    }
+
+
+    aside{
+    order:3;
+	flex:1 ;
+	text-align:left ;
+     }
+    
+    /*boxsizingborderbox dont work in flex box*/
+
+
+     aside p{
+     	padding: 0px 20px;
+     }
+
+
+    section{
+    order:2;/*排列順序*/
+	flex:2 ;/*大小佔比*/
+    }
+
+
+
+
+    .imgbox{
+	order: 1;
+	
+       }
+
+
+
+    .box h3{
+	order:2;
+	
+     }
+
+
+    .box p{
+	order: 3;
+	
+      }
+
+
+     .head{
+	order: 4;
+	
+     }
+
+      
+
+
+
+
+}

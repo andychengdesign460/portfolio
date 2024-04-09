@@ -1,0 +1,139 @@
+@charset "utf-8";
+@import url("rwd.css");
+/* CSS Document */
+
+*{
+	margin:0;
+	padding:0;
+}
+
+body{
+	font-family: Georgia, "Times New Roman", Times, serif;
+	background:rgba(242, 242, 242, 1);
+}
+
+/* header */
+header{
+	position:relative;
+	padding:15px 0px;
+	color:rgba(255, 255, 255, 1);
+	background:rgba(141, 159, 94, 1);
+	text-align:center;
+}
+
+.ficon{
+	font-size:60px;
+	padding:5px;
+}
+
+.menu{
+	position:absolute;
+	right:20px;
+	top:20px;
+	width:30px;
+	height:30px;
+	font-size:30px;
+	display:block;
+}
+
+.menu:hover{
+	cursor:pointer;
+}
+
+/* nav bar */
+nav{
+	width:100%;
+	margin:auto;
+	text-align:center;
+	background:rgba(96, 108, 56, 1);
+	font-size:18px;
+
+}
+
+nav li{
+	display: block;
+	border-bottom:solid rgba(242, 242, 242, 1) 1px;
+}
+
+nav li a{
+	display: block;
+	width:100%;
+	padding:20px 30px;
+	color: rgba(255, 255, 255, 1);
+	text-decoration: none;
+}
+
+nav li a:hover{
+	background:rgba(207, 181, 59, 1);
+}
+
+/* section */
+section{
+    
+	width:80%;
+	margin: auto;
+	padding:30px 0px;
+	text-align:center;
+	color:rgba(96, 108, 56, 1);
+	line-height:2.5em;
+	font-size:1.1em;
+}
+
+section img{
+
+	width:100%;
+	border-radius:20%;
+
+	-ms-transform:scale(1,1);
+	-webkit-transform:scale(1,1);
+	transform:scale(1,1);
+
+	transition: transform 1.5s;
+	-webkit-transition: transform 1.5s;
+
+	transition-timing-function: ease-in-out;
+	-webkit-transition-timing-function: ease-in-out;
+
+}
+
+section img:hover{
+    
+    -ms-transform:scale(1.1,1.1);
+	-webkit-transform:scale(1.1,1.1);
+	transform:scale(1.1,1.1);
+
+	}
+
+
+
+/*footer*/
+
+footer{
+    
+	padding:20px 0px;
+	text-align:center;	
+}
+
+/*===============rwd details===============*/
+
+/* For tablets */
+@media only screen and (min-width: 768px) { 
+    
+    nav{position: -webkit-sticky;
+	position: sticky;
+	top: 0px;
+    z-index: 100;
+    }
+
+	nav li{
+	display: inline-block;
+	border-bottom:solid rgba(242, 242, 242, 1) 0px;}
+
+}
+
+/* For desktop */
+@media only screen and (min-width: 1200px) {
+	
+}
+
+

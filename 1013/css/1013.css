@@ -1,0 +1,330 @@
+@charset "utf-8";
+/***
+    The new CSS reset - version 1.8.5 (last updated 14.6.2023)
+    GitHub page: https://github.com/elad2412/the-new-css-reset
+***/
+
+/*
+    Remove all the styles of the "User-Agent-Stylesheet", except for the 'display' property
+    - The "symbol *" part is to solve Firefox SVG sprite bug
+    - The "html" attribute is exclud, because otherwise a bug in Chrome breaks the CSS hyphens property (https://github.com/elad2412/the-new-css-reset/issues/36)
+ */
+*:where(:not(html, iframe, canvas, img, svg, video, audio):not(svg *, symbol *)) {
+    all: unset;
+    display: revert;
+}
+
+/* Preferred box-sizing value */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+/* Reapply the pointer cursor for anchor tags */
+a, button {
+    cursor: revert;
+}
+
+/* Remove list styles (bullets/numbers) */
+ol, ul, menu {
+    list-style: none;
+}
+
+/* For images to not be able to exceed their container */
+img {
+    max-inline-size: 100%;
+    max-block-size: 100%;
+}
+
+/* removes spacing between cells in tables */
+table {
+    border-collapse: collapse;
+}
+
+/* Safari - solving issue when using user-select:none on the <body> text input doesn't working */
+input, textarea {
+    -webkit-user-select: auto;
+}
+
+/* revert the 'white-space' property for textarea elements on Safari */
+textarea {
+    white-space: revert;
+}
+
+/* minimum style to allow to style meter element */
+meter {
+    -webkit-appearance: revert;
+    appearance: revert;
+}
+
+/* preformatted text - use only for this feature */
+:where(pre) {
+    all: revert;
+}
+
+/* reset default text opacity of input placeholder */
+::placeholder {
+    color: unset;
+}
+
+/* remove default dot (•) sign */
+::marker {
+    content: initial;
+}
+
+/* fix the feature of 'hidden' attribute.
+   display:revert; revert to element instead of attribute */
+:where([hidden]) {
+    display: none;
+}
+
+/* revert for bug in Chromium browsers
+   - fix for the content editable attribute will work properly.
+   - webkit-user-select: auto; added for Safari in case of using user-select:none on wrapper element */
+:where([contenteditable]:not([contenteditable="false"])) {
+    -moz-user-modify: read-write;
+    -webkit-user-modify: read-write;
+    overflow-wrap: break-word;
+    -webkit-line-break: after-white-space;
+    -webkit-user-select: auto;
+}
+
+/* apply back the draggable feature - exist only in Chromium and Safari */
+:where([draggable="true"]) {
+    -webkit-user-drag: element;
+}
+
+/* Revert Modal native behavior */
+:where(dialog:modal) {
+    all: revert;
+}
+
+
+
+body{
+	font-family: 'Roboto', sans-serif;
+	background: rgba(254, 227, 224, 1.0);
+}
+
+
+nav{
+	position: fixed;
+	width: 100%;
+    top:0px;
+    z-index: 10000;
+
+
+    background-color: white;
+
+    box-sizing: border-box;
+
+    display: flex;
+	flex-direction:row;
+	align-items: center;
+    justify-content: center;
+
+}
+
+
+nav a{
+   
+   box-sizing: border-box;
+   color: darkgray;
+   display: inline;
+   margin: 10px;
+   padding: 5px;
+   border-bottom: solid 1px rgb(0, 0, 0, 0.2);
+
+}
+
+nav a:hover{
+  
+  color: rgba(253, 116, 104, 1.0);
+
+}
+
+
+section {
+	position: relative;
+	width: 90%;
+	height: 500px;
+	overflow: hidden;
+	margin: 70px auto 0px;
+
+} 
+
+.left {
+	position: absolute;
+    box-sizing: border-box;
+    width:70%;
+    z-index: 20;
+
+    left: 80px;
+    top: 150px;
+}
+
+
+.left h1{
+	font-family: 'Young Serif', serif;
+	font-size: 48px;
+	line-height: 1em;
+	color: rgba(253, 116, 104, 1.0);
+}
+
+
+.left p{
+	font-family: "hoefler text";
+    margin-top:8px;
+	font-size: 16px;
+    width: 70%;
+	color: rgba(144, 8, 150, 1.0);
+}
+
+
+.right{
+	position: absolute;
+	box-sizing: border-box;
+	width: 70%;
+
+	right:0px;
+
+}
+
+
+
+
+article{
+    display: flex;
+    flex-direction:row;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	margin: 20px auto 0px;
+	width: 90%;
+
+}
+
+
+.card{
+
+     box-sizing: border-box;
+     width: 33%;
+     text-align: center;
+     border: sold 5 rgba(254, 227, 224, 1.0);
+     padding: 5px 0px;
+
+     background: rgba(253, 116, 104, 1.0);
+     color: rgba(255, 255, 255, 1.0);
+     
+
+     transition: background 1s, color 3s;
+     -webkit-transition: background 1s, color 3s;
+     /*for safari 3.1-6.0*/
+     
+}
+
+
+
+.card:hover{
+
+	cursor: pointer;
+	background: rgba(255, 255, 255, 1.0);
+    color: rgba(0, 0, 0, 1.0);
+}
+
+
+aside{
+  clear: both;
+  width:90%;
+  margin: 20px auto;
+
+
+}
+
+
+
+aside ::selection{
+	background: rgba(253, 116, 104, 1.0);
+    color: rgba(255, 255, 255, 1.0);
+}
+
+
+
+
+.wrap{
+	float: left;
+	height:100%;
+	box-sizing: border-box;
+	padding: 30px;
+	background:rgba(255, 255, 255, .5) ;
+
+}
+
+
+
+
+
+
+
+.tx_l{
+	float: left;
+    width: 30%;
+}
+
+
+.tx_r{
+	float: left;
+    width: 70%;
+}
+
+
+.tx_l img{
+	display:block;
+	width: 100%;
+}
+
+
+
+.tx_r p{
+	line-height: 2em;
+	box-sizing: border-box;
+	color:rgba(144, 8, 150, 1.0) ;
+	padding:0px 20px;
+}
+
+
+footer{
+	clear: both;
+	margin: 50px;
+	color: lightgray;
+	text-align: center;
+	font-size: 14px;
+}
+
+
+.home{
+	position: fixed;
+	z-index:1000;
+	bottom: 40px;
+	left:40px;
+
+    width: 80px;
+    height: 80px;
+    border-radius: 100px;
+
+    background: black;
+    color:white;
+
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+
+    cursor: pointer;
+}
+
+
+
+
+
