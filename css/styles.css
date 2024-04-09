@@ -1,0 +1,678 @@
+@import url('https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400;500;600;700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Young+Serif&display=swap');
+
+@charset "utf-8";
+/***
+    The new CSS reset - version 1.8.5 (last updated 14.6.2023)
+    GitHub page: https://github.com/elad2412/the-new-css-reset
+***/
+
+/*
+    Remove all the styles of the "User-Agent-Stylesheet", except for the 'display' property
+    - The "symbol *" part is to solve Firefox SVG sprite bug
+    - The "html" attribute is exclud, because otherwise a bug in Chrome breaks the CSS hyphens property (https://github.com/elad2412/the-new-css-reset/issues/36)
+ */
+*:where(:not(html, iframe, canvas, img, svg, video, audio):not(svg *, symbol *)) {
+    all: unset;
+    display: revert;
+}
+
+/* Preferred box-sizing value */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+/* Reapply the pointer cursor for anchor tags */
+a,
+button {
+    cursor: revert;
+}
+
+/* Remove list styles (bullets/numbers) */
+ol,
+ul,
+menu {
+    list-style: none;
+}
+
+/* For images to not be able to exceed their container */
+img {
+    max-inline-size: 100%;
+    max-block-size: 100%;
+}
+
+/* removes spacing between cells in tables */
+table {
+    border-collapse: collapse;
+}
+
+/* Safari - solving issue when using user-select:none on the <body> text input doesn't working */
+input,
+textarea {
+    -webkit-user-select: auto;
+}
+
+/* revert the 'white-space' property for textarea elements on Safari */
+textarea {
+    white-space: revert;
+}
+
+/* minimum style to allow to style meter element */
+meter {
+    -webkit-appearance: revert;
+    appearance: revert;
+}
+
+/* preformatted text - use only for this feature */
+:where(pre) {
+    all: revert;
+}
+
+/* reset default text opacity of input placeholder */
+::placeholder {
+    color: unset;
+}
+
+/* remove default dot (•) sign */
+::marker {
+    content: initial;
+}
+
+/* fix the feature of 'hidden' attribute.
+   display:revert; revert to element instead of attribute */
+:where([hidden]) {
+    display: none;
+}
+
+/* revert for bug in Chromium browsers
+   - fix for the content editable attribute will work properly.
+   - webkit-user-select: auto; added for Safari in case of using user-select:none on wrapper element */
+:where([contenteditable]:not([contenteditable="false"])) {
+    -moz-user-modify: read-write;
+    -webkit-user-modify: read-write;
+    overflow-wrap: break-word;
+    -webkit-line-break: after-white-space;
+    -webkit-user-select: auto;
+}
+
+/* apply back the draggable feature - exist only in Chromium and Safari */
+:where([draggable="true"]) {
+    -webkit-user-drag: element;
+}
+
+/* Revert Modal native behavior */
+:where(dialog:modal) {
+    all: revert;
+}
+
+
+
+
+
+
+body {
+
+    font-family: sans-serif;
+    font-size: 40pt;
+    font-weight: bold;
+    color: darkgray;
+
+
+}
+
+
+
+.home{
+    cursor: pointer;
+}
+
+
+header {
+    width: 100%;
+    padding-top: 20px;
+    position: fixed;
+    
+    text-align: center;
+    z-index: 100;
+    background: yellow;
+    
+}
+
+
+header h1{
+    font-size: 20pt;
+}
+
+
+
+
+
+
+
+nav {
+
+    padding: 12px;
+    margin-bottom: 2vh;
+
+
+    /*overflow: hidden;*/
+    position: relative;
+
+
+}
+
+
+
+
+
+#myLinks {
+
+    display: none;
+    flex-direction: row;
+    color: darkgray;
+    align-items: center;
+    justify-content: center;
+
+}
+
+
+nav li  {
+    position: relative;
+       }
+
+
+nav li  span{
+     display: none;
+       }
+
+
+
+nav li a {
+    
+    display: inline;
+    margin: 20px;
+    padding: 5px;
+
+}
+
+
+nav li a:hover {
+
+    color: rgb(0, 0, 0, 1);
+    margin: 20px;
+    border-bottom: solid 5px rgb(0, 0, 0, 1);
+}
+
+
+nav li a:active {
+
+    color: rgb(0, 0, 0, 1);
+    margin: 20px;
+    border-bottom: solid 1px rgb(0, 0, 0, 1);
+    font-weight: bold;
+}
+
+
+
+
+
+
+section {
+    width: 80%;
+
+    padding-top:150px;
+
+
+    margin-left: auto;
+    margin-right: auto;
+
+    text-align: center;
+    border-bottom: solid .5px lightgray;
+
+}
+
+
+
+.scrollup{
+   
+}
+
+
+.homework {
+    font-size: 50pt;
+}
+
+
+
+
+
+
+
+.track{
+    display: block;
+    height: 800vw;
+    background-color: white;
+
+}
+
+.camera{
+    
+    display: block;
+    height: 100vh;
+    width: 100vw;
+
+    overflow: hidden;
+
+    background-color: green;
+
+
+    position: sticky; 
+    top: 0;
+}
+
+
+#frame{
+    position: fixed;
+    left:200px;
+
+
+    display: flex;
+    flex-direction: row;
+    justify-content: left;
+    align-items: stretch;
+    text-align: center;
+
+
+    height:50%;
+    width:50vw;
+
+
+    overflow:visible;
+    flex-wrap: nowrap;
+
+
+}
+
+
+.item_1{
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+ 
+    background: orange;
+    width: 70vw;
+    height: 100%;
+
+
+
+}
+
+.item_2{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background: blue;
+    width: 50vw;
+    height: auto;
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+.lens{
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+.lens img{
+
+   margin: 1px;
+}
+
+
+
+.illusion_top{
+    position: fixed;
+    top: 20vh;
+    left: 40vw;
+    z-index: -50;
+    mix-blend-mode: multiply;
+}
+
+
+
+
+
+#grid {
+    
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+
+
+    padding:120px 0px;
+
+
+
+}
+
+.article_a {
+    display: inlin-block;
+    color: darkgray;
+
+}
+
+
+
+
+
+
+/*section div a:nth-child(2n+1){
+    border-top: solid 1px rgb(0, 0, 0, 1);
+}*/
+
+.article_a:hover {
+    /* background-color:   #0080FF;*/
+    background-color:rgb(0, 0, 255, 1.0);
+    
+
+    color: white;
+}
+
+
+
+
+
+article {
+
+    margin: 4vw;
+    /*font-family: 'Pixelify Sans', sans-serif;*/
+
+    -ms-transform:scale(1,1);
+    -webkit-transform:scale(1,1);
+    transform:scale(1,1);
+
+    transition: transform 1.2s;
+    -webkit-transition: transform 1.2s;
+
+    transition-timing-function: ease-in-out;
+    -webkit-transition-timing-function: ease-in-out;
+
+}
+
+
+
+
+article:hover{
+    -ms-transform:scale(.8,.8);
+    -webkit-transform:scale(.8,.8);
+    transform:scale(.8,.8);
+}
+
+
+
+.card {
+    width: 200px;
+    position: relative;
+    display: inline-block;
+}
+
+.card .img_top {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 99;
+}
+
+#grid a:hover .img_top {
+    display: inline;
+}
+
+
+
+
+
+
+
+footer {
+
+    padding: 20px;
+    text-align: center;
+    color: rgb(0, 0, 0, 0.2);
+    font-size: 10px;
+}
+
+.back {
+    background-color: black;
+    width: 50px;
+    height: 50px;
+    position: fixed;
+    bottom: 40px;
+    right: 40px;
+
+    text-align: center;
+    align-items: center;
+}
+
+
+
+#topBtn {
+    font-family: 'Pixelify Sans', sans-serif;;
+    position: fixed;
+    bottom: 20px;
+    right: 30px;
+    z-index: 99;
+    border: none;
+    outline: none;
+    background-color: darkgray;
+    color: white;
+    cursor: pointer;
+    padding: 15px;
+    border-radius: 10px;
+    font-size: 18px;
+    display: none;
+
+}
+
+#topBtn:hover {
+    background-color: black;
+}
+
+
+
+
+
+
+/*for phone*/
+@media {
+    body,header,footer {
+        background: cyan;
+    }
+
+    #myLinks {
+    display: none;
+    flex-direction:column;
+    }
+
+    #grid,.scrollup{
+        background: cyan;
+    }
+
+
+    #findburger{
+    display: none;
+    }
+    
+
+
+    .illusion_bottom{
+      width: 80%;
+    }
+
+    .illusion_top{
+      width: 44%;
+    }
+
+    
+    .illusion_top{
+    position: fixed;
+    top: 28vh;
+    left: 30vw;
+    z-index: -50;
+    mix-blend-mode: multiply;
+    }
+
+
+}
+
+
+/*===============rwd details===============*/
+
+/*for tablets*/
+
+@media only screen and (min-width:768px) {
+    body,header,footer {
+        background: #FF0080;
+    }
+    
+
+    #myLinks {
+    display: none;
+    flex-direction:column;
+    }
+
+    #grid,.scrollup{
+          background: #FF0080;
+    }
+
+
+    #findburger{
+    display: none;
+    }
+
+    
+    .illusion_top{
+    position: fixed;
+    top: 25vh;
+    left: 35vw;
+    z-index: -50;
+    mix-blend-mode: multiply;
+    }
+
+
+    .illusion_bottom{
+      width: 60%;
+    }
+
+    .illusion_top{
+      width: 35%;
+    }
+
+
+     nav li  span{
+        display: none;
+    }
+    
+
+    .homework {
+    font-size: 80pt;
+}
+
+
+    
+}
+
+/*for desktop*/
+
+@media only screen and (min-width:1200px) {
+    body,header,footer {
+        background: yellow;
+    }
+     
+    
+    .icon{
+        display: none;
+    }
+
+
+     #myLinks {
+    display: flex;
+    flex-direction:row;}
+
+      #grid,.scrollup{
+          background: yellow;
+    }
+
+
+    #findburger{
+    display: block;
+    }
+
+    
+    .illusion_top{
+    
+    top: 30vh;
+    left: 40vw;
+    }
+
+    .illusion_bottom{
+      width: 36%;
+    }
+
+    .illusion_top{
+      width: 21%;
+    }
+    
+
+    nav li  span{
+        
+
+    font-size: 10pt;
+    font-weight: 500;
+    position: absolute;
+    right:-10px;
+    bottom:-16px;
+    
+   
+
+    width: 6vh;
+    height: 6vh;
+
+
+    border-radius: 50%;
+    background: rgb(0, 0, 255, 1.0);
+    color: white;
+
+
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    }
+    
+
+    .homework {
+    font-size: 80pt;
+}
+
+
+
+}
